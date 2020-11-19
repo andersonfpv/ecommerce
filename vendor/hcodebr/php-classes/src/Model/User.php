@@ -202,7 +202,11 @@ class User extends Model {
 		$sql = new Sql();
 
 		$results = $sql->select("
-			SELECT * FROM tb_persons a INNER JOIN tb_users b USING(idperson) WHERE a.desemail = :email;", array(
+			SELECT *
+			FROM tb_persons a
+			INNER JOIN tb_users b USING(idperson)
+			WHERE a.desemail = :email;
+		", array(
 			":email"=>$email
 		));
 
@@ -299,7 +303,7 @@ class User extends Model {
 
 	}
 	
-	public static function setForgotUsed($idrecovery)
+	public static function setFogotUsed($idrecovery)
 	{
 
 		$sql = new Sql();
